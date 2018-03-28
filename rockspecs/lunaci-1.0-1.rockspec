@@ -1,8 +1,7 @@
 package = "lunaci"
-version = "1.0-0"
+version = "1.0-1"
 source = {
-  url = "git://github.com/moonhappy/lunaci",
-  tag = "v1.0.0"
+   url = "git+https://github.com/moonhappy/lunaci.git"
 }
 description = {
    summary = "Build Love2D projects for multiple platforms on popular CI services.",
@@ -11,7 +10,7 @@ description = {
    license = "UNLICENSE"
 }
 dependencies = {
-   "lua >= 5.1"
+   "lua ~> 5.1"
 }
 build = {
    type = "builtin",
@@ -19,5 +18,6 @@ build = {
      bin = {
        "bin/install.sh"
      }
-   }
+   },
+   modules = {}
 }
