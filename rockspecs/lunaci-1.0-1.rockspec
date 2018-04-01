@@ -10,13 +10,16 @@ description = {
    license = "UNLICENSE"
 }
 dependencies = {
-   "lua ~> 5.1"
+   "lua >= 5.1",
+   "argparse >= 0.5",
+   "loadconf >= 0.3",
+   "etlua >= 1.3"
 }
 build = {
    type = "builtin",
    install = {
      bin = {
-       "bin/install.sh"
+       "bin/lunaci"
      }
    },
    modules = {}

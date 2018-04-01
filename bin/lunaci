@@ -1,0 +1,16 @@
+#!/usr/bin/env lua
+
+local argparse = require "argparse"
+-- local commands = require 'loverocks.commands'
+local loadconf = require "loadconf"
+-- local log      = require 'loverocks.log'
+-- local luarocks = require 'loverocks.luarocks'
+
+local function main(...)
+	local parser = argparse("lunaci", "Configure existing LÖVE projects with build scripts for popular CI services")
+  parser:argument("dir", "Path of the LÖVE project directory to configure build scripts to.")
+  local args = parser:parse()
+  local love_conf = loadconf.parse_file(args.dir .. '/conf.lua')
+end
+
+main(...)
