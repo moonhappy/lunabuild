@@ -1,3 +1,4 @@
+local CMD_BUILD = [[
 #!/usr/bin/env bash
 set -x
 
@@ -75,3 +76,7 @@ cp "dist/${P}.love" "build/${P}.app/Contents/Resources/"
 zip -9 -y -r - "build/${P}.app" > "${P}-macos.zip"
 mv "${P}-macos.zip" dist
 rm -r "build/${P}.app"
+
+]]
+
+return CMD_BUILD

@@ -1,0 +1,53 @@
+#!/usr/bin/env lua
+
+---
+-- @license UNLICENSE
+
+local argparse = require "argparse"
+local loadconf = require "loadconf"
+local etlua = require "etlua"
+
+local cmd_build = require "lunaci.build"
+local ci_yml_gitlab = require "lunaci.gitlab"
+
+local function file_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
+
+local function main(...)
+	local parser = argparse("lunabuild", "Configure existing LÖVE projects with build scripts for popular CI services")
+  parser:command("")
+  parser:argument("dir", "Path of the LÖVE project directory to configure build scripts to.", ".")
+  local args = parser:parse()
+	-- Check conf.lua file exits
+	local file_conf_path = args.dir .. "/conf.lua"
+	if not file_exists(file_conf_path) then
+		print("ERROR: conf.lua file not found, make sure path to LÖVE project is correctly provided")
+		return
+	end
+  local love_conf = loadconf.parse_file(args.dir .. "/conf.lua")
+
+	-- print("Installing scripts for project '" .. love_conf.identity .. "'")
+	-- Install the GitLab YAML
+	-- local temp_gitlab = etlua.compile(ci_yml_gitlab)
+	-- local ci_yaml = temp_gitlab({
+	-- 	proj_name = love_conf.identity
+	-- })
+	-- local ci_yaml_f=io.open(args.dir .. "/.gitlab-ci.yml", "w")
+	-- io.output(ci_yaml_f)
+	-- io.write(ci_yaml)
+	-- io.close(ci_yaml_f)
+	-- -- Install the GitLab YAML
+	-- local temp_bcmd = etlua.compile(cmd_build)
+	-- local build_lua = temp_bcmd({
+	-- 	build_lua = love_conf.identity
+	-- })
+	-- local build_lua_f=io.open(args.dir .. "/lunaci.build.lua", "w")
+	-- io.output(build_lua_f)
+	-- io.write(build_lua)
+	-- io.close(build_lua_f)
+end
+
+main(...)
