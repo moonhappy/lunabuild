@@ -8,8 +8,8 @@
   <path id="em" filter="url(#em_blur)" d="M 84 150 C 84 160, 116 160, 116 150 C 116 170, 84 170, 84 150" fill="white"/>
   <text style="filter: url(#glow); fill: #406060" x="200" y="150" font-size="70">luna</text>
   <text x="200" y="150" style="fill: white" font-size="70">luna</text>
-  <text style="filter: url(#glow); fill: #006600" x="340" y="150" font-size="90">BUILD</text>
-  <text x="340" y="150" style="fill: white" font-size="90">BUILD</text>
+  <text style="filter: url(#glow); fill: #006600" x="340" y="150" font-size="80">BUILD</text>
+  <text x="340" y="150" style="fill: white" font-size="80">BUILD</text>
  </g>
  <defs>
   <filter id="em_blur">
