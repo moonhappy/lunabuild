@@ -4,8 +4,8 @@ source = {
    url = "git+https://github.com/moonhappy/lunabuild.git"
 }
 description = {
-   summary = "Build Love2D projects for multiple platforms on popular CI services.",
-   detailed = "Scripts to ease the automatic build for various platforms on popular CI services.",
+   summary = "Build Love2D projects for multiple platforms or on popular CI services.",
+   detailed = "Build Love2D project distributions with ease, or on CI service.",
    homepage = "https://github.com/moonhappy/lunabuild",
    license = "UNLICENSE"
 }
